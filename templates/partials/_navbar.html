@@ -10,23 +10,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-        {% if '/' == request.path %}
-        <li class="nav-item active mr-3">
-        {% else %}
-        <li class="nav-item mr-3">
-        {% endif %}
-            <a class="nav-link" href="{% url 'index' %}">Home</a>
-        </li>
-        {% if 'about' in request.path %}
-        <li class="nav-item active mr-3">
-        {% else %}
-        <li class="nav-item mr-3"></li>
-        {% endif %}
-            <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
-        <li class="nav-item mr-3">
-            <a class="nav-link" href="{% url 'index' %}">Featured Listings</a>
-        </li>
+            {% if '/' == request.path %}
+            <li class="nav-item active mr-3">
+            {% else %}
+            <li class="nav-item mr-3">
+            {% endif %}
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            {% if 'about' in request.path %}
+            <li class="nav-item active mr-3">
+            {% else %}
+            <li class="nav-item mr-3"></li>
+            {% endif %}
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            {% if 'listings' in request.path %}
+            <li class="nav-item active mr-3">
+            {% else %}
+            <li class="nav-item mr-3">
+            {% endif %}
+                <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
+            </li>
         </ul>
 
         <ul class="navbar-nav ml-auto">
